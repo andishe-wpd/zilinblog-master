@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .flex-wrap-between-center {
+    @apply flex flex-wrap justify-between items-center;
+  }
+  .gradient-glass-card {
+    @apply border-t border-t-[#ffffff7d] p-6 text-white flex  justify-between items-center bottom-0 left-0 right-0 h-[88px] backdrop-blur-[10px] bg-gradient-to-b from-[#d5d5d552] via-[#d5d5d577] to-[#d5d5d552];
+  }
+
+  .custom-button {
+    @apply transition-all  inline-flex gap-2 items-center  font-medium  capitalize hover:bg-blue-50 rounded-md;
+  }
+  .menu {
+    @apply fixed top-0 right-0 w-64 h-full bg-white transition-transform duration-300 ease-in-out;
+    &.isOpen {
+      @apply transform translate-x-0;
+    }
+
+    &.isClosed {
+      @apply transform translate-x-full;
+    }
+  }
+  .backdrop {
+    @apply fixed top-0 left-0 bg-black transition-opacity duration-300 ease-in-out;
+
+    &.isOpen {
+      @apply w-full h-full bg-opacity-50;
+    }
+
+    &.isClosed {
+      @apply bg-opacity-0;
+    }
+  }
+}
+
+/* This will affect the scrollbar globally */
+* {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(101, 112, 133, 0.5) rgba(0, 0, 0, 0.1);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(122, 122, 122, 0.1);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(101, 112, 133, 0.5);
+  border-radius: 10px;
+  border: 3px solid gba(217, 227, 255, 0.7);
+}
